@@ -1,0 +1,7 @@
+# ignore everything 
+*
+# except 
+!_pyvenvboiler/
+!_pyvenvboiler/*/
+!_newenv.bat
+!.gitignore
