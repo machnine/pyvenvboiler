@@ -23,10 +23,12 @@ if "%~1" == "" (
     @echo Creating a Python virtual environment ...
     python -m venv .env
 
+    @echo Python dev environment [%1] is created.
+    
     @echo Upgrade PIP to the latest version ...
+    activate.bat
     python -m pip install -U pip
 
-    @echo Python dev environment [%1] is created.
 
 )
 
