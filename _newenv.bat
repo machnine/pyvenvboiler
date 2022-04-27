@@ -1,12 +1,12 @@
-REM =======================================================================
-REM ==                                                                   ==
-REM ==  Create a new virtual environment using a boiler plate template   ==
-REM ==                                                                   ==
-REM =======================================================================
+:: =======================================================================
+:: ==                                                                   ==
+:: ==  Create a new virtual environment using a boiler plate template   ==
+:: ==                                                                   ==
+:: =======================================================================
 
 @echo off
 
-REM check if a directory name is provided
+:: check if a directory name is provided
 
 if "%~1" == "" (
     echo Please provide a directory name ...
