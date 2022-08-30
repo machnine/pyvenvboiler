@@ -25,9 +25,11 @@ if "%~1" == "" (
 
     @echo Python dev environment [%1] is created.
     
-    @echo Upgrade PIP to the latest version ...
-    activate.bat
-    python -m pip install -U pip
+    @echo Upgrade PIP to the latest version ...    
+    .env\Scripts\python.exe -m pip install -U pip
+    
+    @echo Install packages for VSCode ...
+    .env\Scripts\pip.exe install pylint black
 
 
 )
