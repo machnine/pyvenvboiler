@@ -3,34 +3,31 @@
 :: ==  Create a new virtual environment using a boiler plate template   ==
 :: ==                                                                   ==
 :: =======================================================================
-
+::
+:: ESC character -> Alt + 027
+:: 
+::
+::
 @echo off
 
 :: check if a directory name is provided
 
 if "%~1" == "" (
-    echo Please provide a directory name ...
+    @echo [7;37mPlease provide a directory name ...[0m
     goto ENDCOMMAND
 ) else (
-    @echo Making a new python dev environment [%1] ...
+    @echo [45mMaking a new python dev environment [%1] ...[0m
     mkdir %1
     cd %1
-
-    @echo Copying boiler plate files ... 
-
+    @echo [44mCopying boiler plate files ... [0m
     copy ..\_pyvenvboiler\*.*
-
-    @echo Creating a Python virtual environment ...
+    @echo [44mCreating a Python virtual environment ...[0m
     python -m venv .env
-
-    @echo Python dev environment [%1] is created.
-    
-    @echo Upgrade PIP to the latest version ...    
+    @echo Python dev environment [45m[%1] [0mis created.
+    @echo [45mUpgrade PIP to the latest version ...[0m    
     .env\Scripts\python.exe -m pip install -U pip
-    
-    @echo Install packages for VSCode ...
-    .env\Scripts\pip.exe install pylint black
-
+    @echo [45mInstall packages for VSCode ...[0m
+    .env\Scripts\pip.exe install pyflakes pycodestyle flake8 black
 
 )
 
