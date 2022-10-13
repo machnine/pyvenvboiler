@@ -33,7 +33,12 @@ if not exist %1\ (
     @echo 3. Exit
     
     choice /c 123 /n /m "Choose an action [1-3]:"    
-    
+    REM errorlevel going in reverse order
+    REM e.g. 
+    REM    3 allows 3/2/1 to be executed
+    REM    2 allows 2/1
+    REM    1 only allows 1
+    REM if the statements below are reversed 1 will always be executed
     if ERRORLEVEL 3 goto ENDCOMMAND 
     if ERRORLEVEL 2 goto DELETE_ALL
     if ERRORLEVEL 1 goto DELETE_ENV   
